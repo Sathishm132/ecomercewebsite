@@ -1,7 +1,13 @@
+import Container from "./UI/container";
+import Header from "./UI/Header";
+
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <Header></Header>
+      <Container/>
+     
     </div>
   );
 }

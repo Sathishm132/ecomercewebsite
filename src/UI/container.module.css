@@ -1,0 +1,24 @@
+.headertwo{
+    position: relative;
+    height: 6rem;
+    width: 100%;
+    margin-top: 2rem;
+    
+    background-color: beige;
+    text-align: center;
+    padding: 1rem;
+    
+ 
+    box-shadow: 6%;
+
+}
+.bottum{
+    position:static;
+
+    
+    top:100;
+    left:0;
+    background-color: azure;
+    height: 10%;
+    width: 100%;
+}
