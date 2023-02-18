@@ -1,5 +1,5 @@
-import Cartitem from "../UI/cartitm";
-
+import { Container } from "react-bootstrap";
+import Product from "./product";
 const productsArr = [
 
     {
@@ -43,16 +43,15 @@ const productsArr = [
     }
     
     ]
-    
-    
-const List=props=>{
-   const cartitem=productsArr.map((item)=>(<Cartitem 
+
+const Item=props=>{
+    const productlist=productsArr.map((item)=>(<Product
     title={item.title}
-     price={item.price}
-     image={item.imageUrl}/>))
-     return <div>
-        {cartitem}
-     </div>
+    price={item.price}
+    image={item.imageUrl}/>));
+    return <>
+    <Container>
+        {productlist}</Container></>
 
 }
-export default List;
+export default Item;
