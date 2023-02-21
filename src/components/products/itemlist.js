@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import {  Container,} from "react-bootstrap";
 import Product from "./product";
 const productsArr = [
 
@@ -48,10 +48,23 @@ const Item=props=>{
     const productlist=productsArr.map((item)=>(<Product
     title={item.title}
     price={item.price}
-    image={item.imageUrl}/>));
+    image={item.imageUrl}
+    amount={1}/>));
     return <>
     <Container>
-        {productlist}</Container></>
+        
+    <ul className="d-flex flex-wrap">
+        {productlist}
+    </ul>
+    </Container>
+    
+        
+            
+            
+        
+       
+    
+    </>
 
 }
 export default Item;

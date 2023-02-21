@@ -1,10 +1,12 @@
 import { Container, Navbar,Nav } from "react-bootstrap"
-import classes from './Navbar.module.css';
+import Modal from "../../ui/modal";
+
+
 const Header=(props)=>{
+    
     return<>
-    <div className={classes.nav}>
-        <header>
-            <Navbar bg="success"  expand="lg" >
+     
+            <Navbar bg="success" fixed="top"  expand="lg" >
                 <Container>
                 <Navbar.Brand>Sharpener Shop</Navbar.Brand>
             
@@ -22,14 +24,14 @@ const Header=(props)=>{
             
             
                 </Container>
-                <button onClick={props.onclick}>Cart</button>
+                <Modal/>
 
             </Navbar>
             
-        </header>
 
-    </div>
+
+    
   
     </>
 }
-export default Header
+export default Header;
