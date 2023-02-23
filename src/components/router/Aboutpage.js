@@ -1,26 +1,11 @@
 import { useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 
 
 
 const AboutPage=()=>{
-    const[movies,setMovies]=useState([]);
-    const fetchhandler=()=>{
-       
-        fetch("https://swapi.py4e.com/api/").then(
-            (response)=>{
-                return response.json();
-            }).then((data)=>{
-                const array=data.flims.map(item=>{
-                    return {
-                        item:item
-                    };
-                });
-                return setMovies(array);
-            });
-                
-        
-    };
+   
     return(
      <>
      
@@ -34,9 +19,11 @@ const AboutPage=()=>{
                 <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="/">store</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
+            <NavLink to ="#home" >Home</NavLink>
+            <NavLink to ="/">store</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/contact">contactus</NavLink>
+            
             
             </Nav>
             </Navbar.Collapse>
@@ -51,7 +38,7 @@ const AboutPage=()=>{
            
             </div>
             <div className="mt-5">
-                <button onClick={fetchhandler}>movies</button>
+             
             {<Container>
                 <h1>dh`undm-wg9d983mi</h1>
                 <p>vy`f27dvt29ogdngoihj
@@ -59,7 +46,7 @@ const AboutPage=()=>{
                     wnbhde72gt3r8g72
                     sij9`u8379r8`2jsdwiuy7deiu3
                     1e8u27t34e8u3hbe</p></Container>}
-                 {movies}
+                 
             </div>
             
             <footer>

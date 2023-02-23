@@ -1,6 +1,4 @@
 
-
-import { act } from "@testing-library/react";
 import { useReducer } from "react";
 import Cartcontext from "./context";
 

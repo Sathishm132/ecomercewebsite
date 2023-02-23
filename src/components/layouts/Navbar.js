@@ -1,4 +1,5 @@
 import { Container, Navbar,Nav } from "react-bootstrap"
+import { NavLink } from "react-router-dom";
 import Modal from "../../ui/modal";
 
 
@@ -15,9 +16,10 @@ const Header=(props)=>{
                 <Navbar.Collapse id="basic-navbar-nav">
           <Nav >
             
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">store</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
+            <NavLink to="#home">Home</NavLink>
+            <NavLink to="#link">store</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/contact">contactus</NavLink>
             
             </Nav>
             </Navbar.Collapse>

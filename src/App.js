@@ -8,13 +8,18 @@
 // import Contextprovider from "./store/provider";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import AboutPage from "./components/router/Aboutpage";
+import Contact from "./components/router/Contact";
 import Store from "./components/router/store";
 
 const routered=createBrowserRouter([
   {path:"/",
 element:<Store/>},
 {path:"/about",
-element:<AboutPage/>}
+element:<AboutPage/>},
+{
+  path:"/contact",
+  element:<Contact/>
+}
 ])
 
 function App() {
