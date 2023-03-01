@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import {  Card,Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Cartcontext from "../../store/context";
 
 const Product=props=>{
@@ -16,8 +17,9 @@ const Product=props=>{
     
     
     <Card style={{ width: '18rem' }} className="m-5 p-1">
-    <Card.Title>{props.title}</Card.Title>
-      <Card.Img variant="top" src={props.image} />
+    <Link to={`"${props.title}"`}><Card.Title>{props.title}</Card.Title>
+      <Card.Img variant="top" src={props.image} />  
+      </Link>
       <Card.Body>
        <ul>
         <h4>price={props.price}Rs</h4>
@@ -27,7 +29,7 @@ const Product=props=>{
        
       </Card.Body>
     </Card>
-    
+   
     
   
     </>

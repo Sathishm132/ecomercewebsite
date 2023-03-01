@@ -14,13 +14,16 @@ const Header=(props)=>{
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-          <Nav >
+          <Nav className="bg-dark p-3 m-3 d-fex">
             
-            <NavLink to="#home">Home</NavLink>
-            <NavLink to="#link">store</NavLink>
+            <NavLink to="#home" >Home</NavLink>
+            <NavLink to="/store">store</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">contactus</NavLink>
-            
+            <NavLink to="/signin">signin</NavLink>
+
+
+         
             </Nav>
             </Navbar.Collapse>
             

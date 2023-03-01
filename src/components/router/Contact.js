@@ -1,10 +1,11 @@
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import { useEffect, useRef } from "react";
 
 
 const Contact=()=>{
+  const navigate=useNavigate();
     const Name=useRef();
     const Email=useRef()
     const phone=useRef()
@@ -24,6 +25,11 @@ const Contact=()=>{
             body:JSON.stringify(user),
     
        })
+       console.log(user)
+       Name.current.value=null;
+       Email.current.value=null;
+       phone.current.value=null;
+       navigate("/");
     
       
     }
@@ -37,12 +43,12 @@ const Contact=()=>{
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-          <Nav >
+          <Nav className="d-flex justify-content-between">
             
-            <NavLink to="#home">Home</NavLink>
-            <NavLink to="/">store</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">contactus</NavLink>
+            <NavLink to="#home" className="m-2 text-dark">Home</NavLink>
+            <NavLink to="/"  className="m-2">store</NavLink>
+            <NavLink to="/about"  className="m-2">About</NavLink>
+            <NavLink to="/contact"  className="m-2">contactus</NavLink>
             
             </Nav>
             </Navbar.Collapse>
@@ -77,7 +83,7 @@ const Contact=()=>{
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control ref={phone} type="number" placeholder="ph-number" />
+        <Form.Control ref={phone} type="tel" placeholder="ph-number" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />

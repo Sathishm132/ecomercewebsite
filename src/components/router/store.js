@@ -11,15 +11,13 @@ import Headerf from "../layouts/header";
 import Item from "../products/itemlist";
 import Contextprovider from "../../store/provider";
 const Store=()=>{
-    const [cartshow,setCartshow]=useState(false);
-    const carthandler=()=>{
-      setCartshow(true)
-    }
+    
+
     return(
         <>
  <Contextprovider>
 
-<Header onclick={carthandler}/>
+<Header/>
 
 <div>
 <Headerf/>
