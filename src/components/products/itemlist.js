@@ -45,17 +45,19 @@ const productsArr = [
     ]
 
 const Item=props=>{
-    const productlist=productsArr.map((item)=>(<Product
+    const productlist=productsArr.map((item)=>(<ul  key={item.title} ><Product
     title={item.title}
     price={item.price}
     image={item.imageUrl}
-    amount={1}/>));
+    amount={1}/> </ul>));
     return <>
     <Container>
         
     <ul className="d-flex flex-wrap">
-        {productlist}
+    {productlist}
     </ul>
+       
+    
     </Container>
     
         

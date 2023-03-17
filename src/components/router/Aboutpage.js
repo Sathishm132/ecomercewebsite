@@ -1,64 +1,53 @@
+import { Container } from "react-bootstrap";
 
-import { Container, Nav, Navbar } from "react-bootstrap"
-import { NavLink } from "react-router-dom"
+import Header from "../layouts/Navbar";
 
+const AboutPage = () => {
+  return (
+    <>
+      <Header />
+      <div></div>
+      <div className="mt-5">
+        {
+          <Container>
+            <h1>About Us</h1>
+            <p>
+                  To develop monitoring and surveillance robots for practical
+              implementation in a home environment, a range of issues must be
+              resolved. These include working in cluttered environments , the
+              need to perform surveillance in conjunction with simultaneous
+              localization and mapping , object recognition and tracking ,
+              integration of static and mobile surveillance systems , and
+              simplifying the computing requirements whilst maintaining fully
+              autonomous monitoring capabilities . In addition, making them
+              truly autonomous in a way that they can act in different scenarios
+              and environments without any human intervention is a challenging
+              task. Deep learning using deep neural networks (DNN) are being
+              applied to solve many complicated tasks where the machine itself
+              will try to learn the task, provided that it has enough data. This
+              approach has achieved amazing results in all sorts of applications
+              from image processing tasks such as object detection and
+              segmentation of images , speech recognition and generation , and
+              the development of self-driving cars . The possibilities are
+              endless with deep learning in applications from a wide variety of
+              fields including robotics. A variety of approaches are utilized in
+              applying neural networks to mobile robotic applications, in
+              particular to obstacle avoidance and path planning with most using
+              distance measuring approaches to determine obstacle location. Cost
+              effective approaches utilize sensors such as infrared and
+              ultrasonics. Janglová demonstrated neural network approaches to
+              mapping and path planning by successfully implementing two neural
+              networks on a differential drive robot named Auro containing
+              ultrasound range finds.
+            </p>
+          </Container>
+        }
+      </div>
 
-
-const AboutPage=()=>{
-   
-    return(
-     <>
-     
-     <div>
-     <Navbar bg="success" fixed="top"  expand="lg" >
-                <Container>
-                <Navbar.Brand>Sharpener Shop</Navbar.Brand>
-            
-
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            
-            <NavLink to ="#home" >Home</NavLink>
-            <NavLink to ="/">store</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">contactus</NavLink>
-            
-            
-            </Nav>
-            </Navbar.Collapse>
-            
-            
-                </Container>
-                
-                
-
-            </Navbar>
-            
-           
-            </div>
-            <div className="mt-5">
-             
-            {<Container>
-                <h1>dh`undm-wg9d983mi</h1>
-                <p>vy`f27dvt29ogdngoihj
-                    d2`8ue9yfrhg27y8
-                    wnbhde72gt3r8g72
-                    sij9`u8379r8`2jsdwiuy7deiu3
-                    1e8u27t34e8u3hbe</p></Container>}
-                 
-            </div>
-            
-            <footer>
-                <h1>contact</h1>
-            </footer>
-          
-     </>
-
-
-    )
-    
-
-
-}
-export default AboutPage
+      <footer className="mb-1">
+        <Container>contact</Container>
+      </footer>
+    </>
+  );
+};
+export default AboutPage;

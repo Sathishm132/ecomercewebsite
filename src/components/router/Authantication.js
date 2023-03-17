@@ -1,6 +1,8 @@
-import React, { useRef } from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import React, { useContext, useRef } from 'react'
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
+import Authcontext from '../../store/Authcontext';
+import Header from '../layouts/Navbar';
 
 
 
@@ -9,6 +11,7 @@ const Authantication = () => {
   const enteredemail=useRef();
   const enteredpassword=useRef();
   const navigate=useNavigate();
+  const authctx=useContext(Authcontext);
   
 
   const submithandler=()=>{
@@ -39,8 +42,10 @@ const Authantication = () => {
           })
         }
       }).then((data)=>{
-        console.log(data);
-        navigate("/store")
+    
+        authctx.login(data.idToken,data.email);
+        
+        navigate("/")
 
         
        
@@ -52,6 +57,18 @@ const Authantication = () => {
       })
   }
   return(
+    <>
+    <Navbar bg="info" sticky="top" expand="lg" >
+        <Container>
+          <Navbar.Brand>Sharpener Shop</Navbar.Brand>
+
+          <Nav>signin</Nav>
+              
+            
+          
+        </Container>
+        
+      </Navbar>
     <Container>
     <Form>
       <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -66,7 +83,7 @@ const Authantication = () => {
     </Form>
     </Container>
     
-
+    </>
 
   
   )

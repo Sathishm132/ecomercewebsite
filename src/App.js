@@ -7,55 +7,76 @@
 // import StaticExample from "./ui/modal";
 // import Contextprovider from "./store/provider";
 
-import { createBrowserRouter,RouterProvider } from "react-router-dom";
+
+import { createBrowserRouter,redirect,RouterProvider, useNavigate, useNavigation, } from "react-router-dom";
+import Cart from "./components/cart/cart";
+import Cartitems from "./components/cart/cartitem";
 import AboutPage from "./components/router/Aboutpage";
 import Authantication from "./components/router/Authantication";
 import Contact from "./components/router/Contact";
 import Home from "./components/router/Home";
 import ProductDetial from "./components/router/productdetial";
+
 import Store from "./components/router/store";
 
-const routered=createBrowserRouter([
-  {path:"/",
-element:<Home/>},
-  {path:"/store",
-element:<Store/>,
-childeren:[
-  
+import Contextprovider from "./store/provider";
 
-]},
-{path:"/about",
-element:<AboutPage/>},
-{
-  path:"/contact",
-  element:<Contact/>
-},
 
-{
-  path:"store/:id",
-  element:<ProductDetial/>
-},
-{
-  path:"signin",
-  element:<Authantication/>
-},
 
-  
 
-  
-
-])
 
 function App() {
   // const [cartshow,setCartshow]=useState(false);
   // const carthandler=()=>{
   //   setCartshow(true)
   // }
+  
+  const routered=createBrowserRouter([
+    {path:"/",
+  element:<Store/>,
+  loader:()=>{
+    if(localStorage.getItem("token")){
+      return true
+    }else{
+      return redirect("signin")
+    }
+  }
+    },
+    {path:"/home",
+    element:<Home/>,
+   
+    },
+  {
+    path:"signin",
+    element:<Authantication/>
+  },
+  {
+    path:"/:id",
+    element:<ProductDetial/>
+  },
+  {path:"/about",
+  element:<AboutPage/>},
+  {
+    path:"/contact",
+    element:<Contact/>
+  },
+  
+  
+  
+   
+    
+  
+  
+  
+    
+  
+    
+  
+  ])
   return (
    <>
-   
+ 
    <RouterProvider router={routered}></RouterProvider>
-   
    </>
    
   

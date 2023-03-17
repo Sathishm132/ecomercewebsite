@@ -1,14 +1,16 @@
-import { Container, Form, Nav, Navbar } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Container, Form,} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
+import Header from "../layouts/Navbar";
 
 
 const Contact=()=>{
-  const navigate=useNavigate();
+  
     const Name=useRef();
     const Email=useRef()
     const phone=useRef()
+    const navigate=useNavigate()
             
 
     
@@ -25,42 +27,19 @@ const Contact=()=>{
             body:JSON.stringify(user),
     
        })
-       console.log(user)
+      
+      
        Name.current.value=null;
        Email.current.value=null;
        phone.current.value=null;
-       navigate("/");
+       navigate("/")
+   
     
       
     }
     return(
         <>
-        <header>
-     <Navbar className="mb-3" bg="success" fixed="top"   expand="lg" >
-                <Container>
-                <Navbar.Brand>Sharpener Shop</Navbar.Brand>
-            
-
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex justify-content-between">
-            
-            <NavLink to="#home" className="m-2 text-dark">Home</NavLink>
-            <NavLink to="/"  className="m-2">store</NavLink>
-            <NavLink to="/about"  className="m-2">About</NavLink>
-            <NavLink to="/contact"  className="m-2">contactus</NavLink>
-            
-            </Nav>
-            </Navbar.Collapse>
-            
-            
-                </Container>
-               
-
-            </Navbar>
-            <br></br>
-            </header>
-            
+        <Header/>
             
             
     <Container className="mt-5">
@@ -82,7 +61,7 @@ const Contact=()=>{
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label>Phonenumber</Form.Label>
         <Form.Control ref={phone} type="tel" placeholder="ph-number" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">

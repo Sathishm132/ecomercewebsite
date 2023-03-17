@@ -17,7 +17,7 @@ const Product=props=>{
     
     
     <Card style={{ width: '18rem' }} className="m-5 p-1">
-    <Link to={`"${props.title}"`}><Card.Title>{props.title}</Card.Title>
+    <Link to={props.title}><Card.Title>{props.title}</Card.Title>
       <Card.Img variant="top" src={props.image} />  
       </Link>
       <Card.Body>

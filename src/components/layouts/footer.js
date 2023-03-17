@@ -1,10 +1,15 @@
+import { Container } from "react-bootstrap";
+
 const Fotter=props=>{
     return<>
-    <fotter>
-        <h1>
+        <footer><Container>
+        <h1 className="text-align-center">
             thank you
         </h1>
-    </fotter>
+    
+            </Container></footer>
+        
+     
     </>
 }
 export default Fotter;

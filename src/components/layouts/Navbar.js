@@ -1,42 +1,58 @@
-import { Container, Navbar,Nav } from "react-bootstrap"
+import { remove } from "firebase/database";
+import { useContext } from "react";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import Modal from "../../ui/modal";
+import Authcontext from "../../store/Authcontext";
+import Cart from "../cart/cart";
 
 
-const Header=(props)=>{
-    
-    return<>
-     
-            <Navbar bg="success" fixed="top"  expand="lg" >
-                <Container>
-                <Navbar.Brand>Sharpener Shop</Navbar.Brand>
-            
+const Header = (props) => {
+  const authcontx=useContext(Authcontext);
+  const remove=()=>{
 
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="bg-dark p-3 m-3 d-fex">
-            
-            <NavLink to="#home" >Home</NavLink>
-            <NavLink to="/store">store</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">contactus</NavLink>
-            <NavLink to="/signin">signin</NavLink>
+    authcontx.logout()
+  }
+  let logstatus;
+  if(localStorage.getItem("token")){
+    logstatus=<NavLink className={"nav-link"} onClick={remove} >
+    logout
+  </NavLink>
+  }else{
+    logstatus=<NavLink to="/signin" className={"nav-link"}>
+    signin
+  </NavLink>
+  }
 
-
-         
-            </Nav>
-            </Navbar.Collapse>
-            
-            
-                </Container>
-                <Modal/>
-
-            </Navbar>
-            
-
-
-    
   
+  return (
+    <>
+      <Navbar bg="info" sticky="top" expand="lg" >
+        <Container>
+          <Navbar.Brand>Sharpener Shop</Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              <NavLink to="/home" className={"nav-link"}>
+                Home
+              </NavLink>
+              <NavLink to="/" className={"nav-link"}>
+                store
+              </NavLink>
+              <NavLink to="/about" className={"nav-link"}>
+                About
+              </NavLink>
+              <NavLink to="/contact" className={"nav-link"}>
+                contactus
+              </NavLink>
+              {logstatus}
+              
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+        <Cart />
+      </Navbar>
     </>
-}
+  );
+};
 export default Header;
