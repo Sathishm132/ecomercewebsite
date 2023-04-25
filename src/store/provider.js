@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useContext, useEffect, useReducer, useState } from "react";
-import Authcontext from "./Authcontext";
+import {  useEffect, useReducer, } from "react";
+
 import Cartcontext from "./context";
 
 const DefaultValue = {
@@ -98,7 +98,7 @@ const CartReducer = (state, action) => {
 
 const Contextprovider = (props) => {
   const [cartstate, dispatch] = useReducer(CartReducer, DefaultValue);
-  const authcntx=useContext(Authcontext);
+
 
   useEffect(() => {
     const fetch = async () => {

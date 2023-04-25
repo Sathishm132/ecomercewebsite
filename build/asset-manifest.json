@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/http//Sathishm132.github.io/ecomercewebsite/static/css/main.546928b1.css",
+    "main.js": "/http//Sathishm132.github.io/ecomercewebsite/static/js/main.c07205a8.js",
+    "static/media/bootstrap-icons.woff?": "/http//Sathishm132.github.io/ecomercewebsite/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
+    "static/media/bootstrap-icons.woff2?": "/http//Sathishm132.github.io/ecomercewebsite/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
+    "index.html": "/http//Sathishm132.github.io/ecomercewebsite/index.html",
+    "main.546928b1.css.map": "/http//Sathishm132.github.io/ecomercewebsite/static/css/main.546928b1.css.map",
+    "main.c07205a8.js.map": "/http//Sathishm132.github.io/ecomercewebsite/static/js/main.c07205a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.546928b1.css",
+    "static/js/main.c07205a8.js"
+  ]
+}
